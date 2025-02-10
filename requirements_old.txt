@@ -1,0 +1,1 @@
+"numpy==1.23.5\npandas==1.5.3\nmatplotlib==3.6.3\nseaborn==0.12.2\nscikit-learn==1.2.2\ntensorflow==2.11.0\ngym==0.26.2\nccxt==2.9.14\nyfinance==0.2.18\nbacktrader==1.9.76.123\nzipline-reloaded==2.4.0\nrequests==2.28.2" 
