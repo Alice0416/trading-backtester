@@ -1,6 +1,3 @@
-
- 
-=======
 # 📈 Algorithmic Trading Backtest System
 
 ## 🔥 Overview
