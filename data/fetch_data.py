@@ -10,7 +10,7 @@ def get_data(ticker, start="2020-01-01", end="2023-01-01"):
     os.makedirs("data", exist_ok=True)
 
     # Save data
-    file_path = f"data/{ticker}.csv"
+    file_path = f"{ticker}.csv"
     data.to_csv(file_path)
     print(f"Data saved successfully at {file_path}")
 
