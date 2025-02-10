@@ -1,4 +1,4 @@
- import pandas as pd
+import pandas as pd
 from data.fetch_data import get_data
 from strategies.momentum import momentum_strategy
 from backtest.engine import backtest
