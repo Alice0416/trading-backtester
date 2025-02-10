@@ -102,4 +102,3 @@ Pull requests and feature suggestions are welcome!
 
 ## 📜 License
 MIT License
- b36515a (Resolved merge conflicts)
