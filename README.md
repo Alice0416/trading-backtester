@@ -25,17 +25,33 @@ This is a **backtesting system for algorithmic trading strategies**, built with 
 
 ## 📂 Project Structure
 ```
-📁 trading-backtester
-│── 📂 data                 # Historical Market Data
-│── 📂 strategies           # Trading Strategies
-│── 📂 backtest             # Backtest Engine
-│── 📂 reports              # Performance Reports
-│── 📂 models               # Machine Learning & Reinforcement Learning Models
-│── 📂 realtime             # Live Market Data & Trading Simulation
-│── 📜 main.py              # Main Script
-│── 📜 requirements.txt     # Dependencies
-│── 📜 README.md            # Project Documentation
-│── 📜 config.py            # Configuration File
+📁 trading-backtester      # Main project folder
+│── 📂 data               # Historical data & real-time data
+│   │── fetch_data.py      # Data fetching script (ensures directory exists)
+│   │── AAPL.csv           # Sample stock data
+│── 📂 strategies         # Trading strategies
+│   │── momentum.py        # Momentum trading strategy
+│   │── mean_reversion.py  # Mean reversion strategy
+│   │── ml_trading.py      # Machine learning strategy
+│   │── rl_trading.py      # Reinforcement learning strategy
+│── 📂 backtest           # Trading backtest code
+│   │── engine.py          # Core backtest engine
+│   │── metrics.py         # Compute returns, Sharpe ratio, etc.
+│── 📂 reports            # Trading visualization & results analysis
+│   │── visualization.py   # Plot trading signals & capital curves
+│   │── performance.py     # Compute key trading metrics
+│── 📂 realtime           # Real-time trading API & WebSocket
+│   │── live_trading.py    # Live trading execution code
+│   │── websocket.py       # WebSocket for real-time market data
+│── 📂 models             # Machine learning & deep learning
+│   │── train_model.py     # Train trading models
+│   │── model.pkl         # Trained model (optional)
+│── 📂 config             # Configuration and environment settings
+│   │── settings.py        # Global config file (API keys, strategy params)
+│── 📜 main.py            # Main script to run strategies & backtest
+│── 📜 requirements.txt   # Dependencies (pip install -r requirements.txt)
+│── 📜 environment.yml    # Conda environment setup file
+│── 📜 README.md          # Project documentation
 ```
 
 ## 🚀 Quick Start
@@ -43,32 +59,43 @@ This is a **backtesting system for algorithmic trading strategies**, built with 
 ```bash
 pip install -r requirements.txt
 ```
+OR, if using Conda:
+```bash
+conda env create -f environment.yml
+conda activate trading-backtest
+```
+
 ### 2️⃣ Fetch Market Data
 ```python
-from data.fetch import get_data
+from data.fetch_data import get_data
 get_data("AAPL", start="2020-01-01", end="2023-01-01")
 ```
+
 ### 3️⃣ Run a Momentum Strategy
 ```python
 from strategies.momentum import momentum_strategy
 strategy_data = momentum_strategy("data/AAPL.csv")
 ```
+
 ### 4️⃣ Run a Machine Learning Strategy
 ```python
 from strategies.ml_trading import ml_based_strategy
 strategy_data = ml_based_strategy("data/AAPL.csv")
 ```
+
 ### 5️⃣ Run a Reinforcement Learning Strategy
 ```python
 from strategies.rl_trading import reinforcement_learning_strategy
 strategy_data = reinforcement_learning_strategy("data/AAPL.csv")
 ```
+
 ### 6️⃣ Backtest the Strategy
 ```python
 from backtest.engine import backtest
 final_value = backtest(strategy_data)
 print(f"Final Portfolio Value: ${final_value:.2f}")
 ```
+
 ### 7️⃣ Visualize Results
 ```python
 from reports.visualization import plot_strategy
@@ -99,3 +126,4 @@ Pull requests and feature suggestions are welcome!
 
 ## 📜 License
 MIT License
+
